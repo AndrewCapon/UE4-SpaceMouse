@@ -1,4 +1,4 @@
-﻿// Copyright 2018-2021 David Morasz All Rights Reserved.
+// Copyright 2018-2021 David Morasz All Rights Reserved.
 // This source code is under MIT License https://github.com/microdee/UE4-SpaceMouse/blob/master/LICENSE
 
 
@@ -281,10 +281,10 @@ FTDxWareReadingMethod::~FTDxWareReadingMethod()
     }
 }
 
-void FTDxWareReadingMethod::Tick(FDataReadingOutput& Output, float DeltaSecs)
+void FTDxWareReadingMethod::Tick(FSmDataReadingOutput& Output, float DeltaSecs)
 {
-    FDataReadingMethod::Tick(Output, DeltaSecs);
-    FProcessedDeviceOutput CurrData = AccumulatedData;
+    FSmDataReadingMethod::Tick(Output, DeltaSecs);
+    FSmProcessedDeviceOutput CurrData = AccumulatedData;
     bool bCurrMoved = bMoved;
     bMoved = false;
 

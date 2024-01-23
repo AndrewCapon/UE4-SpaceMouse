@@ -1,4 +1,4 @@
-﻿// Copyright 2018-2021 David Morasz All Rights Reserved.
+// Copyright 2018-2021 David Morasz All Rights Reserved.
 // This source code is under MIT License https://github.com/microdee/UE4-SpaceMouse/blob/master/LICENSE
 
 #pragma once
@@ -15,11 +15,11 @@ struct FTDxDeviceModel
 };
 
 class SPACEMOUSEREADER_API FTDxWareReadingMethod
-    : public FDataReadingMethod
+    : public FSmDataReadingMethod
 {
 private:
     TArray<FTDxDeviceModel> SeenDevices;
-    FProcessedDeviceOutput AccumulatedData;
+    FSmProcessedDeviceOutput AccumulatedData;
     void Init();
 
     static void DeviceAdded(uint32_t unused);
@@ -38,7 +38,7 @@ public:
 
     static TSharedPtr<FTDxWareReadingMethod> GetSingleton();
 
-    virtual void Tick(FDataReadingOutput& Output, float DeltaSecs) override;
+    virtual void Tick(FSmDataReadingOutput& Output, float DeltaSecs) override;
 };
 
 #endif
