@@ -27,7 +27,7 @@ void FSpaceMouseManager::Initialize()
     MovementState = MakeShared<FSmMovementState>();
     Devices.Empty();
 
-#if PLATFORM_MAC // On mac we have to use the 3DxWare SDK (at least pretend ;) )
+#if 0 // PLATFORM_MAC // On mac we have to use the 3DxWare SDK (at least pretend ;) )
 
     FSmDeviceInstantiation InstInfo {
         0, nullptr, [this]() { return GetUserSettings(); }
